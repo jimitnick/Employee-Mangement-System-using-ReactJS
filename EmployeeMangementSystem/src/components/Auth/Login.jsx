@@ -5,28 +5,30 @@ import { Card, CardContent } from "../ui/card";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
 
-const Login = () => {
+const Login = (props) => {
     const [email, setEmail] = useState('');
     const [passwd, setPasswd] = useState('');
     const submithandler = (e)=>{
         e.preventDefault()  
+        const loginHandler = props.loginHandler;
+        loginHandler(email,passwd);
         console.log("Form submitted")
 
         setEmail('')
         setPasswd('')   
     }
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-        <Card className="w-full max-w-md shadow-xl rounded-2xl p-6 bg-white">
+    <div className="min-h-screen flex items-center justify-center  p-4">
+        <Card className="w-full max-w-md shadow-xl rounded-2xl p-6 ">
             <h2 className="text-2xl font-bold text-center text-black-800 mb-6">Welcome Back</h2>
             <CardContent className="space-y-4">
             <form onSubmit={(e) => {
                 submithandler(e)
-            }}>
-                <input type="email" placeholder="Email" className="w-full mb-4 p-3 border-1 rounded-xl" value={email} onChange = {(e) => {
+            }} className="w-full text-zinc-900">
+                <input type="email" placeholder="Email" className="w-full mb-4 p-3 border-1 rounded-xl text-zinc-900" value={email} onChange = {(e) => {
                     setEmail(e.target.value)
                 }}/>
-                <input type="password" placeholder="Password" className="w-full mb-4 p-3 border-1 rounded-xl" placeHolder="Password" value={passwd} onChange = {(e) => {
+                <input type="password" placeholder="Password" className="w-full mb-4 p-3 border-1 rounded-xl text-zinc-900" value={passwd} onChange = {(e) => {
                     setPasswd(e.target.value)
                 }}/>
                 <Button className="w-full bg-blue-600 text-white hover:bg-blue-700 cursor-pointer">Login</Button>
