@@ -2,12 +2,12 @@ import React from 'react'
 import Card from './card'
 import Tasklists from '../TaskList/Tasklists'
 import Login from '../Auth/Login'
-const EMployeeDashboard = ({setUser}) => {
+const EMployeeDashboard = ({setUser,employeeName}) => {
   return (
     <>
         <div className='flex w-full h-20 bg-zinc-800 p-4 items-center justify-between'>
             <div>
-                <h1 className='text-white text-3xl flex justify-center gap-2 items-center'>Hi <span>Employee</span> 👋</h1>
+                <h1 className='text-white text-3xl flex justify-center gap-2 items-center'>Hi <span>{employeeName}</span> 👋</h1>
             </div>
             <div className='flex items-center justify-center text-white gap-16 text-xl'>
                 <a href="">Home</a>
