@@ -1,10 +1,10 @@
 import React from 'react'
 
-const card = () => {
+const card = (props) => {
   return (
-    <div className='flex-col w-1/4 h-36 rounded-xl bg-red-500 justify-center items-center'>
-      <h1>0</h1>
-      <h1>New Task</h1>
+    <div className={`flex flex-col w-[40%] h-40 rounded-xl ${props.bg} justify-center items-center text-white text-center`}>
+      <h1 className='text-6xl'>{props.Number}</h1>
+      <h2 className='text-2xl text-zinc-900'>{props.TaskValue}</h2>
     </div>
   )
 }
