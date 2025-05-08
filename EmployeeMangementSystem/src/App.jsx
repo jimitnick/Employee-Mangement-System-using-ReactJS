@@ -24,6 +24,7 @@ const App = () => {
     }
     else{
       alert("Invalid Credentials")
+      setUser(null);
     }
   }
   
@@ -33,7 +34,7 @@ const App = () => {
   return (
     <>
     <div className='w-screen h-screen bg-zinc-950'>
-      {/* <Navbar /> */}
+      {user ? <Navbar /> : ''}
       {!user ? <Login loginHandler = {loginHandler}/> : ""}
       {user == "Admin" && <AdminDashboard setUser = {setUser} adminName = {loggedInUser}/>}
       {user == "Employee" && <EMployeeDashboard setUser = {setUser} employeeName = {loggedInUser.Name}/>}

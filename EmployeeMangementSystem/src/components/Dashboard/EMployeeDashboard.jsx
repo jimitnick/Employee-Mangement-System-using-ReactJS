@@ -10,7 +10,6 @@ const EMployeeDashboard = ({setUser,employeeName}) => {
                 <h1 className='text-white text-3xl flex justify-center gap-2 items-center'>Hi <span>{employeeName}</span> 👋</h1>
             </div>
             <div className='flex items-center justify-center text-white gap-16 text-xl'>
-                <a href="">Home</a>
                 <button className='bg-amber-700 p-4 w-36 rounded-xl' onClick={
                     () =>{
                         setUser("");
